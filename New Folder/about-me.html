@@ -1,104 +1,130 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>CSS Template</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style>
-		* {
-			box-sizing: border-box;
-		}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-		body {
-			font-family: Arial, Helvetica, sans-serif;
-		}
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-		/* Style the header */
-		header {
-			background-color: #666;
-			padding: 30px;
-			text-align: center;
-			font-size: 35px;
-			color: white;
-		}
+        header {
+            background-color: #808080;
+            padding: 25px;
+            text-align: center;
+            font-size: 20px;
+            color: white;
+        }
+        section {
+            display: table;
+            display: flex;
+        }
 
-		/* Container for flexboxes */
-		section {
-			display: -webkit-flex;
-			display: flex;
-		}
+        nav {
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            background: #df09e5;
+            padding: 20px;
+        }
 
-		/* Style the navigation menu */
-		nav {
-			-webkit-flex: 1;
-			-ms-flex: 1;
-			flex: 1;
-			background: #ccc;
-			padding: 20px;
-		}
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+            }
 
-			/* Style the list inside the menu */
-			nav ul {
-				list-style-type: none;
-				padding: 0;
-			}
+        article {
+            -webkit-flex: 3;
+            -ms-flex: 3;
+            flex: 10;
+            background-color: white;
+            padding: 10px;
+        }
 
-		/* Style the content */
-		article {
-			-webkit-flex: 3;
-			-ms-flex: 3;
-			flex: 3;
-			background-color: #f1f1f1;
-			padding: 10px;
-		}
+        footer {
+            background-color: #808080;
+            padding: 50px;
+            text-align: center;
+            color: white;
+        }
 
-		/* Style the footer */
-		footer {
-			background-color: #777;
-			padding: 10px;
-			text-align: center;
-			color: white;
-		}
+        .redirect a:link {
+            color: yellow;
+        }
 
-		/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
-		@media (max-width: 600px) {
-			section {
-				-webkit-flex-direction: column;
-				flex-direction: column;
-			}
-		}
-	</style>
+        @media (max-width: 600px) {
+            section {
+                -webkit-flex-direction: column;
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
 
-	<h2>CSS Layout Flexbox</h2>
-	<p>In this example, we have created a header, two columns/boxes and a footer. On smaller screens, the columns will stack on top of each other.</p>
-	<p>Resize the browser window to see the responsive effect.</p>
-	<p><strong>Note:</strong> Flexbox is not supported in Internet Explorer 10 and earlier versions.</p>
+    <h2>
+        This is all about me (Zack nachlis)
+    </h2>
+    <p> My name is Zack Nachlis and here are some of my intrests</p>
 
-	<header>
-		<h2>Cities</h2>
-	</header>
+    <header>
+        <h2>My interests are</h2>
+    </header>
 
-	<section>
-		<nav>
-			<ul>
-				<li><a href="#">London</a></li>
-				<li><a href="#">Paris</a></li>
-				<li><a href="#">Tokyo</a></li>
-			</ul>
-		</nav>
+    <section>
+        <nav>
+            <ul>
+                <li><a class="redirect" href="#" id="button1">Biking</a></li>
+                <li><a class="redirect" href="#"id="button2">Dirtbike riding</a></li>
+                <li><a class="redirect" href="#" id="button3">Shooting</a></li>
+            </ul>
+        </nav>
 
-		<article>
-			<h1>London</h1>
-			<p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
-			<p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
-		</article>
-	</section>
+        <article>
+            <h1 id="header">A little backstory about me.</h1>
+            <p id="pb1">I grew up riding motorcycles because my dad used to when he was a kid and he wanted me to ride.</p>
+            <p id="pb2">I learned how to ride bikes at a young age and ever since then ivebeen riding bikes and fixing bikes more and more</p>
+            <p id="pb3">I learned how to shoot when I was around 10yrs old and I learned when I was at Boy scout camp and ever since then ive been shooting with friends and family.</p>
+        </article>
 
-	<footer>
-		<p>Footer</p>
-	</footer>
+    </section>
+    <footer></footer>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $('.redirect').click(function () {
+        var header = 'Pending'
+        var pb1 = 'Pending'
+        var pb2 = 'Pending'
+        var pb3 = 'Pending'
+        var selection = $(this).attr('id')
+        if (selection == "button1") {
+            header = 'Biking'
+            pb1 = 'I started biking when I was young and only around 3 years ago is when I started to get super interested in biking mostly because of my friends, The first chapter of my biking experience was spent learning bmx with 3 of my friends it was a lot of fun because none of us had any expirience with bmx so I always had competion so we spent around 3 years riding bmx and we got pretty advanced then we started riding around 10-20 miles a day and that was hard with bmx bikes so I bought a bigger bike.'
+            pb2 = 'jkdni1q  hnp'
+            pb3 = 'nbhq nbichbop1   '
+        }
+        if (selection == "button2") {
+            header = 'Dirtbike riding'
+            pb1 = '2b1'
+            pb2 = '2b2'
+            pb3 = '2b3'
+        }
+        if (selection == "button3") {
+            header = 'Shooting'
+            pb1 = '3b1'
+            pb2 = '3b2'
+            pb3 = '3b3'
+        }
+        $('#header').text(header)
+        $('#pb1').text(pb1)
+        $('#pb2').text(pb2)
+        $('#pb3').text(pb3)
+    })
+</script>
 </body>
 </html>
